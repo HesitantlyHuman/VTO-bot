@@ -1,0 +1,11 @@
+#Exclude user configuration and logging files
+config.ini
+*.txt
+
+#Exclude python exacutable files
+*.pyc
+*.pyo
+
+#Exclude the pychache and pytest_cache folders
+__pycache__/
+.pytest_cache/
