@@ -64,7 +64,7 @@ def vto_step(interface, schedule_manager, config):
         response = interface.request_vto(desired_request['oid'], desired_request['start_time'], desired_request['end_time'])
         if response.status_code == 200:
             j = json.loads(response.text)
-            if j['messages'].lower() == 'the status of your request is approved':
+            if j['messages'][0].lower() == 'the status of your request is approved':
                 print('VTO Recieved!         ')
                 ScheduleManager.set_slot(desired_request, schedule_manager.agent_schedule)
             else:
