@@ -94,10 +94,11 @@ running = True
 while running:
     try:
         vto_step(interface, schedule_manager, config)
-    except httpx.RemoteProtocolError:
+    except (httpx.RemoteProtocolError, httpx.ReadTimeout):
         print('An error has occured...')
         interface = WFMInterface()
         start_interface(interface, config)
+        time.sleep(5)
 
     #if time.time() > (time_out_length + login_time):
     #    print('Connection time out')
