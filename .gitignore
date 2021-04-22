@@ -1,5 +1,4 @@
-#Exclude user configuration and logging files
-config.ini
+#Exclude logging files
 *.txt
 
 #Exclude python exacutable files
